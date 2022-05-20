@@ -1,0 +1,11 @@
+void starship();
+void temperatura ();
+void presentacion();
+void calculadora ();
+void arreglos();
+void matrices();
+void notas();
+void calculadoraTrigonometrica ();
+void factorial();
+void sumatoria ();
+void cajerito();

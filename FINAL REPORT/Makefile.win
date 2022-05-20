@@ -1,0 +1,55 @@
+# Project: final de semestre
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o funciones.o calculadora.o arreglos.o matrices.o notas.o calculadoraTrigonometrica.o factorial.o sumatoria.o cajerito.o
+LINKOBJ  = main.o funciones.o calculadora.o arreglos.o matrices.o notas.o calculadoraTrigonometrica.o factorial.o sumatoria.o cajerito.o
+LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = "final de semestre.exe"
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+DEL      = C:\Program Files (x86)\Embarcadero\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+funciones.o: funciones.cpp
+	$(CPP) -c funciones.cpp -o funciones.o $(CXXFLAGS)
+
+calculadora.o: calculadora.cpp
+	$(CPP) -c calculadora.cpp -o calculadora.o $(CXXFLAGS)
+
+arreglos.o: arreglos.cpp
+	$(CPP) -c arreglos.cpp -o arreglos.o $(CXXFLAGS)
+
+matrices.o: matrices.cpp
+	$(CPP) -c matrices.cpp -o matrices.o $(CXXFLAGS)
+
+notas.o: notas.cpp
+	$(CPP) -c notas.cpp -o notas.o $(CXXFLAGS)
+
+calculadoraTrigonometrica.o: calculadoraTrigonometrica.cpp
+	$(CPP) -c calculadoraTrigonometrica.cpp -o calculadoraTrigonometrica.o $(CXXFLAGS)
+
+factorial.o: factorial.cpp
+	$(CPP) -c factorial.cpp -o factorial.o $(CXXFLAGS)
+
+sumatoria.o: sumatoria.cpp
+	$(CPP) -c sumatoria.cpp -o sumatoria.o $(CXXFLAGS)
+
+cajerito.o: cajerito.cpp
+	$(CPP) -c cajerito.cpp -o cajerito.o $(CXXFLAGS)
